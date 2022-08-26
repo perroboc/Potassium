@@ -2,7 +2,8 @@
     "name": "Kindle+",
     "version": "0.0.1",
     "manifest_version": 3,
-    "description": "An extension to enhance Kindle web reader.",
+    "description": "An extension to enhance Kindle Cloud Reader",
+    "author": "Álvaro Muñoz",
     "icons": {
         "16": "icons/k+16.png",
         "32": "icons/k+32.png",
