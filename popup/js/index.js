@@ -46,7 +46,7 @@ function K_load_popup() {
         return response.text();
     })
     .then(function (text) {
-        document.getElementById('K_content').innerHTML = text;
+        document.getElementById('K_content').innerHTML = text; // FIXME: Unsafe assignment to innerHTML
         if (script) {
             document.querySelector('body').appendChild(script);
         }
@@ -84,5 +84,5 @@ function K_message_promise(command, parameter, value) {
 
 function K_show_error(message) {
     document.getElementById('K_error').removeAttribute('style');
-    document.getElementById('K_error_message').innerHTML = message;
+    document.getElementById('K_error_message').innerHTML = message; // FIXME: Unsafe assignment to innerHTML
 }
