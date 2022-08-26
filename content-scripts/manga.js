@@ -123,6 +123,7 @@ function K_getMangaBrightness() {
         value = "0";
         K_setValue(K_DOM_getBookId() + "brightness", value);
     }
+    K_debug(`K_getMangaBrightness: Manga brightness is ${value}`);
     return value;
 }
 
@@ -142,6 +143,7 @@ function K_getMangaContrast() {
         value = "0";
         K_setValue(K_DOM_getBookId() + "contrast", value);
     }
+    K_debug(`K_getMangaContrast: Manga contrast is ${value}`);
     return value;
 }
 
@@ -151,12 +153,9 @@ function K_clearMangaContrast() {
 
 function K_DOM_update_direction() {
     let bookInfoJson = JSON.parse(document.querySelector("#bookInfo").text);
+    
     let saved_navigationDirection = K_getValue(
         K_DOM_getBookId() + "navigationDirection"
-    );
-
-    K_debug(
-        `K_DOM_update_direction: Change navigation direction to ${saved_navigationDirection}`
     );
 
     if (saved_navigationDirection) {
@@ -180,3 +179,5 @@ function K_DOM_getBookId() {
         .querySelector('meta[property="og:url"]')
         .content.match(regex)[1];
 }
+
+K_debug('Content script loaded!');

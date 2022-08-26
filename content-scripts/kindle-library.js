@@ -71,7 +71,7 @@ function K_library_add_hide_option(element) {
     }
 
     let div_test = document.createElement('a');
-    div_test.setAttribute('id', 'k+_a_hide');
+    div_test.setAttribute('id', 'K_a_hide');
     div_test.innerText = message;
     div_test.setAttribute('aria-label', message);
     div_test.setAttribute('tabindex', '0');
@@ -113,38 +113,28 @@ function K_applyBookHide(node) {
         hide_flag = 'false';
         K_setValue(`${K_getASIN(node)}hide`, hide_flag);
     }
-    K_applyStyle(node);
-}
-
-function K_getASIN(node) {
-    return node.closest('li').querySelector('div').getAttribute('data-asin');
-}
-
-function K_applyStyle(node) {
-    let hide_flag = K_getValue(`${K_getASIN(node)}hide`);
-    K_debug(`hide flag: ${hide_flag}`);
-    
-    let node_to_hide = node;
 
     if (hide_flag === 'true') {
         if (K_globalHide === 'true') {
-            node_to_hide
+            node
             .closest('li')
             .setAttribute('style', 'display:none');
         }
         else {
-            node_to_hide
+            node
             .closest('li')
             .setAttribute('style', 'opacity: 0.3');
         }
     }
     else {
-        node_to_hide
+        node
             .closest('li')
             .removeAttribute('style');
-    }
+    }  
+}
 
-    
+function K_getASIN(node) {
+    return node.closest('li').querySelector('div').getAttribute('data-asin');
 }
 
 function K_setGlobalHide(flag) {
@@ -159,5 +149,4 @@ function K_getGlobalHide() {
         K_setValue('GlobalHide', value);
     }
     return value;
-
 }

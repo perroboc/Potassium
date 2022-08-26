@@ -1,11 +1,11 @@
 K_message_promise("get", "global_hide").then(function (response) {
     if (response === 'true') {
         document
-        .getElementById("k+_swt_library_hide")
+        .getElementById("K_swt_library_hide")
         .setAttribute("checked", "");
     }
     
-    document.getElementById("k+_swt_library_hide").addEventListener(
+    document.getElementById("K_swt_library_hide").addEventListener(
         "input",
         function (event) {
             let value = event.currentTarget.checked;

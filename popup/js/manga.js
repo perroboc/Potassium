@@ -1,12 +1,12 @@
 K_message_promise("get", "direction").then(function (response) {
     if (response === "lr") {
         document
-            .getElementById("k+_manga_reading_direction_lr")
+            .getElementById("K_manga_reading_direction_lr")
             .setAttribute("checked", "");
         document
-            .getElementById("k+_manga_reading_direction_lr")
+            .getElementById("K_manga_reading_direction_lr")
             .setAttribute("disabled", "");
-        document.getElementById("k+_manga_reading_direction_rl").addEventListener(
+        document.getElementById("K_manga_reading_direction_rl").addEventListener(
             "click",
             function (event) {
                 K_message_promise("set", "direction").then(function (return_value) {
@@ -17,12 +17,12 @@ K_message_promise("get", "direction").then(function (response) {
         );
     } else {
         document
-            .getElementById("k+_manga_reading_direction_rl")
+            .getElementById("K_manga_reading_direction_rl")
             .setAttribute("checked", "");
         document
-            .getElementById("k+_manga_reading_direction_rl")
+            .getElementById("K_manga_reading_direction_rl")
             .setAttribute("disabled", "");
-        document.getElementById("k+_manga_reading_direction_lr").addEventListener(
+        document.getElementById("K_manga_reading_direction_lr").addEventListener(
             "click",
             function (event) {
                 K_message_promise("set", "direction").then(function (return_value) {
@@ -36,43 +36,43 @@ K_message_promise("get", "direction").then(function (response) {
 
 K_message_promise("get", "brightness").then(function (response) {
     document
-        .getElementById("k+_manga_brightness")
+        .getElementById("K_manga_brightness")
         .setAttribute("value", response);
-    document.getElementById("k+_manga_brightness").addEventListener(
+    document.getElementById("K_manga_brightness").addEventListener(
         "input",
         function (event) {
             let value = event.currentTarget.valueAsNumber;
             console.log(`Setting brightness to ${value}`);
             K_message_promise("set", "brightness", value)
                 .then(function (return_value) {
-                    K_manga_set_numeric_span("k+_manga_brightness_value", value);
+                    K_manga_set_numeric_span("K_manga_brightness_value", value);
                 });
         },
         false
     );
-    K_manga_set_numeric_span("k+_manga_brightness_value", response);
+    K_manga_set_numeric_span("K_manga_brightness_value", response);
 });
 
 K_message_promise("get", "contrast").then(function (response) {
     document
-        .getElementById("k+_manga_contrast")
+        .getElementById("K_manga_contrast")
         .setAttribute("value", response);
-    document.getElementById("k+_manga_contrast").addEventListener(
+    document.getElementById("K_manga_contrast").addEventListener(
         "input",
         function (event) {
             let value = event.currentTarget.value;
             console.log(`Setting contrast to ${value}`);
             K_message_promise("set", "contrast", value)
                 .then(function (return_value) {
-                    K_manga_set_numeric_span("k+_manga_contrast_value", value);
+                    K_manga_set_numeric_span("K_manga_contrast_value", value);
                 });
         },
         false
     );
-    K_manga_set_numeric_span("k+_manga_contrast_value", response);
+    K_manga_set_numeric_span("K_manga_contrast_value", response);
 });
 
-document.getElementById("k+_btn_reset").addEventListener(
+document.getElementById("K_btn_reset").addEventListener(
     "click",
     function (event) {
         Promise.all([
@@ -87,7 +87,6 @@ document.getElementById("k+_btn_reset").addEventListener(
     },
     false
 );
-
 
 function K_manga_set_numeric_span(node_id, value) {
     document.getElementById(node_id).innerText = (value < 0 ? "" : "+") + value;
