@@ -1,4 +1,4 @@
-K_show_error('Kindle+ does not have access to Kindle Cloud Reader.')
+K_show_error('Potassium does not have access to Kindle Cloud Reader.')
 
 document.getElementById('K_btn_allow_access').addEventListener(
     'click',

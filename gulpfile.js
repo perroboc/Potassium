@@ -105,7 +105,7 @@ function buildManifest(manifest_version, cb) {
                 "16": "icons/k+16.png",
                 "32": "icons/k+32.png"
             },
-            "default_title": "Kindle+",
+            "default_title": "Potassium",
             "default_popup": "popup/index.html"
         },
         "permissions": [
