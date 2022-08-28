@@ -13,5 +13,9 @@
 # Built Visual Studio Code Extensions
 *.vsix
 
-# web-ext
-web-ext-artifacts/
+# Ignore Node Modules
+/node_modules
+
+# Ignore the build directory
+/build
+/dist
