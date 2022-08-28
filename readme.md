@@ -1,4 +1,4 @@
-Kindle+
-=======
+Potassium
+=========
 
-This is a web extension that adds some features to Kindle Web Reader.
+This is a web extension that adds some features to Kindle Cloud Reader.
